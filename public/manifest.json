@@ -1,0 +1,17 @@
+{
+  "name": "Mohamed Yassine Khlaf - Portfolio",
+  "short_name": "MY Khlaf",
+  "description": "Portfolio de Mohamed Yassine Khlaf - Software Engineering Student, Full-Stack Developer, AI & Computer Vision Enthusiast",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
