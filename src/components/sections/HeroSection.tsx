@@ -44,15 +44,24 @@ export function HeroSection() {
           className="mb-8"
         >
           <div className="relative inline-block">
+            {/* blue background / glow - placed behind the image (z-0) and larger than the image */}
             <motion.div
-              className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-500 rounded-full blur-md opacity-75"
-              animate={{ opacity: [0.5, 0.8, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
+              className="absolute -inset-6 z-0 rounded-full bg-gradient-to-r from-primary to-blue-500 opacity-80 filter blur-3xl"
+              animate={{ opacity: [0.6, 0.9, 0.6] }}
+              transition={{ duration: 3, repeat: Infinity }}
             />
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-background bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center">
-              <span className="text-4xl md:text-5xl font-bold text-primary-foreground">
-                MY
-              </span>
+
+            {/* image container sits above the blue background so the photo is not tinted */}
+            <div className="relative z-10 w-40 h-40 rounded-full overflow-hidden border-4 border-black/60 shadow-[0_0_40px_rgba(59,130,246,0.18)]">
+              <motion.img
+                src="/photo-profile.jpg"
+                alt="Photo de profil de Mohamed Yassine Khlaf"
+                className="w-full h-full object-cover"
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.12 }}
+                animate={{ scale: 1.02 }}          // subtle persistent zoom
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+              />
             </div>
           </div>
         </motion.div>
