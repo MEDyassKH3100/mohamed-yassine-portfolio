@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useEmailJS } from "@/hooks/useEmailJS";
 
 const contactInfo = [
   {
@@ -51,20 +52,28 @@ export function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { sendEmail } = useEmailJS(); // ← le hook magique
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const result = await sendEmail(formData);
 
-    toast({
-      title: "Message envoyé !",
-      description: "Merci pour votre message. Je vous répondrai rapidement.",
-    });
+    if (result.success) {
+      toast({
+        title: "Message envoyé !",
+        description: "Merci pour votre message. Je vous répondrai rapidement.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      toast({
+        title: "Erreur lors de l'envoi",
+        description: result.message,
+        variant: "destructive",
+      });
+    }
 
-    setFormData({ name: "", email: "", message: "" });
     setIsSubmitting(false);
   };
 
@@ -173,9 +182,7 @@ export function ContactSection() {
                     type="text"
                     placeholder="Votre nom"
                     value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
                     className="bg-background/50"
                   />
@@ -189,9 +196,7 @@ export function ContactSection() {
                     type="email"
                     placeholder="votre@email.com"
                     value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                     className="bg-background/50"
                   />
@@ -205,13 +210,12 @@ export function ContactSection() {
                     placeholder="Votre message..."
                     rows={5}
                     value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
                     className="bg-background/50 resize-none"
                   />
                 </div>
+
                 <Button
                   type="submit"
                   size="lg"
