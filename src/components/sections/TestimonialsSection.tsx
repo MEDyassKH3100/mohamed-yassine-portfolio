@@ -4,34 +4,42 @@ import { Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Dr. Ahmed Ben Salah",
-    role: "Directeur de Stage, ESPRIT",
+    name: "Khaled Guedria",
+    role: "Encadrant Académique, ESPRIT",
     content:
-      "Mohamed Yassine a démontré une capacité exceptionnelle à concevoir et développer des solutions innovantes. Son projet MSAware a mérité le premier prix grâce à son approche centrée utilisateur et son utilisation intelligente de l'IA.",
-    avatar: "AB",
+      "L'équipe PixelMinds a présenté un projet remarquable avec MSAware, qui a remporté le 1er prix lors du Bal des Projets ESPRIT 2025. Leur solution innovante, centrée sur l'utilisateur et intégrant intelligemment l'IA, a particulièrement impressionné le jury par sa qualité technique et son impact potentiel.",
+    avatar: "KG",
     rating: 5,
   },
   {
-    name: "Sami Meddeb",
-    role: "CTO, Vision Age VFX",
+    name: "Walid Ben Henda",
+    role: "CEO, Vision Age VFX",
     content:
-      "Durant son stage PFE, Yassine a fait preuve d'une grande autonomie et d'excellentes compétences techniques. L'application IQRAA qu'il a développée est robuste, bien architecturée et répond parfaitement aux besoins.",
-    avatar: "SM",
+      "Durant son stage d'ingénieur, Yassine a fait preuve d'une grande autonomie et d'excellentes compétences techniques. L'application IQRAA qu'il a développée est robuste, bien architecturée et répond parfaitement aux besoins.",
+    avatar: "WH",
     rating: 5,
   },
   {
-    name: "Fatma Gharbi",
+    name: "Mohamed Hosni",
+    role: "Encadrant de Stage, ESPRIT",
+    content:
+      "Yassine a démontré une grande autonomie et de solides compétences full-stack mobile durant son stage. Son travail sur la plateforme de chatbot avec intégration Gemini API était rigoureux et de très bonne qualité.",
+    avatar: "MH",
+    rating: 5,
+  },
+  {
+    name: "Khaoula Barhoumi",
     role: "Chef de Projet, ETC Tunisia",
     content:
       "Yassine possède une rare combinaison de compétences techniques et de soft skills. Sa capacité à comprendre les besoins métier et à les traduire en solutions fonctionnelles est remarquable.",
-    avatar: "FG",
+    avatar: "KB",
     rating: 5,
   },
   {
-    name: "Karim Bouazizi",
+    name: "Anis Kalboussi",
     role: "Encadrant Académique, ISIGK",
     content:
-      "Un étudiant brillant et passionné. Son engagement dans Tunivisions a également développé ses qualités de leadership et de travail en équipe.",
+      "Un étudiant brillant doté d'une grande capacité d'apprentissage et d'une excellente maîtrise technique. Yassine fait preuve d'autonomie, de rigueur et d'un véritable esprit analytique dans la réalisation de ses projets, tout en démontrant de solides compétences en travail d'équipe et en communication.",
     avatar: "KB",
     rating: 5,
   },

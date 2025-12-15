@@ -18,7 +18,7 @@ const education = [
   },
   {
     school: "ISIGK",
-    degree: "Licence en Informatique de Gestion",
+    degree: "Licence en sciences de l'informatique ",
     period: "2020 - 2023",
     location: "Kairouan, Tunisie",
   },
@@ -87,7 +87,7 @@ export function AboutSection() {
             <div className="relative">
               {/* Timeline line */}
               <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent" />
-              
+
               <div className="space-y-8">
                 {education.map((item, index) => (
                   <motion.div
@@ -96,13 +96,12 @@ export function AboutSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className={`relative flex flex-col md:flex-row ${
-                      index % 2 === 0 ? "md:flex-row-reverse" : ""
-                    }`}
+                    className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                      }`}
                   >
                     {/* Timeline dot */}
                     <div className="absolute left-0 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full glow-sm" />
-                    
+
                     <div className={`ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pl-8" : "md:pr-8 md:text-right"}`}>
                       <div className="glass p-6 rounded-xl card-hover">
                         <h4 className="text-xl font-bold text-primary">{item.school}</h4>

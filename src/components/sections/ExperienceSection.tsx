@@ -5,7 +5,7 @@ import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
 const experiences = [
   {
     company: "Vision Age VFX",
-    role: "Full-Stack Mobile Developer (Stage PFE)",
+    role: "Full-Stack Mobile Developer (Stage Ingénieur)",
     period: "Juillet 2025 - Octobre 2025",
     location: "Tunisie",
     description:
@@ -24,21 +24,6 @@ const experiences = [
     period: "Juillet 2024 - Septembre 2024",
     location: "Ariana, Tunisie",
     description:
-      "Conception et développement d'un chatbot intelligent pour l'assistance aux clients.",
-    achievements: [
-      "Développement backend avec Python, ChatterBot et Flask",
-      "Interface utilisateur moderne avec React",
-      "Intégration d'algorithmes de traitement du langage naturel",
-      "Documentation technique complète",
-    ],
-    technologies: ["Python", "ChatterBot", "Flask", "React", "NLP"],
-  },
-  {
-    company: "ETC Tunisia",
-    role: "Full-Stack Web Developer (Stage PFA)",
-    period: "Février 2023 - Mai 2023",
-    location: "Tunisie",
-    description:
       "Développement d'une plateforme de chatbot pour le service client avec intégration IA.",
     achievements: [
       "Architecture MVC avec Node.js et Express",
@@ -47,6 +32,21 @@ const experiences = [
       "Intégration de l'API Gemini pour les réponses intelligentes",
     ],
     technologies: ["Node.js", "Express", "MongoDB", "Flutter", "Gemini API"],
+  },
+  {
+    company: "ETC Tunisia",
+    role: "Full-Stack Web Developer (Stage PFE)",
+    period: "Février 2023 - Mai 2023",
+    location: "Kairouan, Tunisie",
+    description:
+      "Conception et développement d'un chatbot intelligent pour l'assistance aux clients.",
+    achievements: [
+      "Développement backend avec Python, ChatterBot et Flask",
+      "Interface utilisateur moderne avec React",
+      "Intégration d'algorithmes de traitement du langage naturel",
+      "Documentation technique complète",
+    ],
+    technologies: ["Python", "ChatterBot", "Flask", "React", "NLP"],
   },
 ];
 

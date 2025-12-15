@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TypeWriterText } from "../TypeWriterText";
 
 export function HeroSection() {
   const scrollToAbout = () => {
@@ -36,7 +37,7 @@ export function HeroSection() {
       </div>
 
       <div className="container-custom text-center">
-        {/* Profile Photo */}
+        {/* Photo de profil */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -44,14 +45,14 @@ export function HeroSection() {
           className="mb-8"
         >
           <div className="relative inline-block">
-            {/* blue background / glow - placed behind the image (z-0) and larger than the image */}
+            {/* Fond bleu / glow - placé derrière l'image (z-0) et plus grand que l'image */}
             <motion.div
               className="absolute -inset-6 z-0 rounded-full bg-gradient-to-r from-primary to-blue-500 opacity-80 filter blur-3xl"
               animate={{ opacity: [0.6, 0.9, 0.6] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
 
-            {/* image container sits above the blue background so the photo is not tinted */}
+            {/* Conteneur d'image au-dessus du fond bleu pour éviter la teinte */}
             <div className="relative z-10 w-40 h-40 rounded-full overflow-hidden border-4 border-black/60 shadow-[0_0_40px_rgba(59,130,246,0.18)]">
               <motion.img
                 src="/photo-profile.jpg"
@@ -59,14 +60,14 @@ export function HeroSection() {
                 className="w-full h-full object-cover"
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.12 }}
-                animate={{ scale: 1.02 }}          // subtle persistent zoom
+                animate={{ scale: 1.02 }}          // Zoom subtil persistant
                 transition={{ duration: 0.8, ease: "easeInOut" }}
               />
             </div>
           </div>
         </motion.div>
 
-        {/* Name */}
+        {/* Nom */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,7 +78,7 @@ export function HeroSection() {
           <span className="text-gradient">Khlaf</span>
         </motion.h1>
 
-        {/* Title */}
+        {/* Titre */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,25 +86,26 @@ export function HeroSection() {
           className="mb-6"
         >
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium">
-            Software Engineering Student |{" "}
-            <span className="text-primary">Full-Stack Developer</span> |{" "}
-            AI & Computer Vision Enthusiast
+            Ingénieur logiciel |{" "}
+            <span className="text-primary">Développeur Full-Stack</span> |{" "}
+            Passionné d'IA et de Vision par Ordinateur
           </p>
         </motion.div>
 
         {/* Bio */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="max-w-2xl mx-auto text-muted-foreground mb-8 text-base md:text-lg"
+          className="max-w-3xl mx-auto text-muted-foreground mb-8"
         >
-          Étudiant motivé passionné par le développement mobile/web, l'intelligence artificielle
-          et le DevOps. Expériences chez ETC Tunisia et Vision Age VFX.
-          Ouvert aux nouvelles opportunités.
-        </motion.p>
+          <TypeWriterText
+            text="Étudiant en ingénierie logicielle ponctuel et motivé, passionné par le développement mobile et web. Doté de compétences en leadership grâce à mes activités extrascolaires, je suis ouvert aux opportunités pour contribuer positivement."
+            className="text-base md:text-lg leading-relaxed"
+          />
+        </motion.div>
 
-        {/* CTA Buttons */}
+        {/* Boutons CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -142,13 +144,13 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Indicateur de scroll */}
       <motion.button
         onClick={scrollToAbout}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        aria-label="Scroll to about section"
+        aria-label="Défiler vers la section À propos"
       >
         <ChevronDown className="h-8 w-8" />
       </motion.button>
